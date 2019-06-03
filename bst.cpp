@@ -12,9 +12,9 @@ struct Node {
 	struct Node *left, *right;
 };
 
-struct Node* newNode(int dataue) {
+struct Node* newNode(int data) {
 	struct Node* temp = new Node;
-	temp->data = dataue;
+	temp->data = data;
 	temp->left = NULL;
 	temp->right = NULL;
 	return temp;
@@ -43,7 +43,7 @@ struct Node* insert(struct Node* node, int data) {
 	return node;
 }
 
-struct Node* mindataueNode(struct Node* node) {
+struct Node* minvalueNode(struct Node* node) {
 	struct Node* curr = node;
 
 	while (curr && curr->left != NULL) {
@@ -76,7 +76,7 @@ struct Node* deleteNode(struct Node* root, int data) {
 			return temp;
 		}
 
-		struct Node* temp = mindataueNode(root->right);
+		struct Node* temp = minvalueNode(root->right);
 		root->data = temp->data;
 		root->right = deleteNode(root->right, temp->data);
 	}
