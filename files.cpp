@@ -28,7 +28,8 @@ void readWords() {
 
 	for (unsigned int i = 0; i < v.size(); i++) {
 		auto it = um.find(v[i]);
-		cout << "Key: " << v[i] << " Value: " << it->second << "\n";
+		cout << "Word: " << left << setw(10) << v[i] 
+			 << " Occurances: " << it->second << "\n";
 	}
 	cout << "\n";
 }
@@ -43,6 +44,7 @@ void readLines() {
 	string buffer[size];
 
 	size_t i = 0;
+
 	while (getline(file, line)) {
 		buffer[i] = line;
 		if (i >= size - 1) {
